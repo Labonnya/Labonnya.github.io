@@ -32,9 +32,6 @@ font-weight: 700;
 /* a:hover {
 
 } */
-img{
-  width: 100%;
-}
 
 section {
 padding-top: 170px;
@@ -47,7 +44,7 @@ i{
 background-image: url(./img/labonnya_cover.png);
 min-height: 100vh;
 background-position: center;
-background-size: cover;
+
 }
 
 .footer {

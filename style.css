@@ -1,0 +1,116 @@
+.navbar-nav {
+  margin-left: 20px;
+  margin-top: 25px;
+  color: #fafcfe;
+  border-color:#525151;
+}
+body {
+  font-family: 'Titillium Web', sans-serif;
+  line-height: 1.8;
+  color: #FBFBFF;
+  font-size: 16px;
+}
+:root {
+--white: #ffffff;
+--body: #545d6d;
+--dark: #202631;
+--border-color: rgba(0, 0, 0, 0.10);
+--border-width: 1px;
+--border-radius: 30px;
+}
+h1,h2,h3,h4,h5,h6 {
+font-weight: 800;
+color:#e7ded9
+}
+
+a {
+text-decoration: none;
+transition: all 0.4s ease;
+font-weight: 700;
+}
+
+/* a:hover {
+
+} */
+
+
+section {
+padding-top: 170px;
+padding-bottom: 150px;
+}
+i{
+  font-size: large;
+}
+#hero{
+background-image: url(../WebDevelopment/img/labonnya_cover.png);
+min-height: 100vh;
+background-position: center;
+background-size: cover;
+}
+
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color: black;
+color:#b8b7b7;
+text-align: center;
+border: 1px solid var(--body);
+}
+
+.navbar-nav li a {
+color: #e7ded9!important;
+}
+
+.navbar-nav li a:hover {
+  color: #808F87!important;
+}
+
+
+.navbar {
+margin-bottom: 0;
+background-color: black;
+position: fixed;
+width: 100%;
+}
+
+table {
+  font-size: 18px;
+}
+
+tbody tr:hover {
+  color: #202631;
+}
+
+#button {
+  background-color: #e7ded9;
+  color: #202631;
+  font-weight: 600;
+}
+
+#button:hover {
+  background-color: #b8b7b7;
+  transform: scale(1.05);
+  transition: color 0.3s ease;
+}
+
+@keyframes fade-up {
+from {
+transform: translateY(50px);
+opacity: 0;
+}
+to {
+transform: translateY(0);
+opacity: 1;
+}
+}
+
+.tasnim{
+
+animation: fade-up 1s;
+}
+.des{
+
+animation: fade-up 1s;
+}

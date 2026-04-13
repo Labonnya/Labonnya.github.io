@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            line-height: 1.6;
+            color: #666;
+        }
+        img {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow: auto;
+        }
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+            margin-top: 10px;
+        }
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            display: none;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<h1>Project Summary</h1>
+<button class="accordion">Configurations</button><div class="panel"><pre>
+{
+    "sys": [
+        "sys.lts"
+    ],
+    "env": [],
+    "dev": [
+        "env.lts"
+    ],
+    "safety": [
+        "p.lts"
+    ],
+    "method": "supervisory",
+    "options": {
+        "progress": [
+            "complete"
+        ],
+        "preferredMap": {
+            "3": [
+                [
+                    "enter",
+                    "uname",
+                    "pwd",
+                    "otpsent",
+                    "otpentered",
+                    "success",
+                    "activity",
+                    "complete"
+                ]
+            ]
+        },
+        "controllableMap": {
+            "1": [
+                "uname",
+                "pwd",
+                "otpsent",
+                "otpentered",
+                "success",
+                "activity",
+                "complete",
+                "logout"
+            ],
+            "3": [
+                "u.enter",
+                "u.logout",
+                "adv.enter",
+                "adv.logout"
+            ]
+        },
+        "observableMap": {
+            "0": [
+                "uname",
+                "pwd",
+                "otpsent",
+                "otpentered",
+                "success",
+                "activity",
+                "complete",
+                "logout"
+            ],
+            "2": [
+                "u.enter",
+                "u.logout",
+                "adv.enter",
+                "adv.logout"
+            ]
+        },
+        "algorithm": "Pareto"
+    }
+}
+</pre>
+</div><button class="accordion">Solution: solution_1.png</button><div class="panel"><h2>Solution: solution_1.png</h2>
+<img src="solution_1.png" width="370" height="400"><br>
+</div><button class="accordion">Solution: solution_2.png</button><div class="panel"><h2>Solution: solution_2.png</h2>
+<img src="solution_2.png" width="433" height="400"><br>
+</div><button class="accordion">Solution: solution_3.png</button><div class="panel"><h2>Solution: solution_3.png</h2>
+<img src="solution_3.png" width="351" height="400"><br>
+</div><button class="accordion">Solution: solution_4.png</button><div class="panel"><h2>Solution: solution_4.png</h2>
+<img src="solution_4.png" width="340" height="400"><br>
+</div>
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+</script>
+</body>
+</html>

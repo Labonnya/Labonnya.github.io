@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            line-height: 1.6;
+            color: #666;
+        }
+        img {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow: auto;
+        }
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+            margin-top: 10px;
+        }
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            display: none;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<h1>Project Summary</h1>
+<button class="accordion">System Specification Diagram</button><div class="panel"><h2>System Specification Diagram</h2>
+<img src="sys.png" width="245" height="400"><br>
+</div><button class="accordion">User Environment Diagram</button><div class="panel"><h2>User Environment Diagram</h2>
+<img src="env.png" width="600" height="108"><br>
+</div><button class="accordion">Configurations</button><div class="panel"><pre>
+{
+    "sys": [
+        "sys.lts"
+    ],
+    "env": [],
+    "dev": [
+        "env.lts"
+    ],
+    "safety": [
+        "p.lts"
+    ],
+    "method": "supervisory",
+    "options": {
+        "progress": [
+            "confirm"
+        ],
+        "preferredMap": {
+            "3": [
+                [
+                    "select",
+                    "back",
+                    "select",
+                    "vote",
+                    "confirm"
+                ]
+            ]
+        },
+        "controllableMap": {
+            "1": [
+                "back",
+                "confirm",
+                "password",
+                "select",
+                "vote"
+            ],
+            "3": [
+                "eo.enter",
+                "eo.exit",
+                "v.enter",
+                "v.exit"
+            ]
+        },
+        "observableMap": {
+            "0": [
+                "back",
+                "confirm",
+                "password",
+                "select",
+                "vote"
+            ],
+            "2": [
+                "eo.enter",
+                "eo.exit",
+                "v.enter",
+                "v.exit"
+            ]
+        },
+        "algorithm": "Pareto"
+    }
+}
+</pre>
+</div><button class="accordion">Solution: solution_1.png</button><div class="panel"><h2>Solution: solution_1.png</h2>
+<img src="solution_1.png" width="364" height="400"><br>
+</div><button class="accordion">Solution: solution_10.png</button><div class="panel"><h2>Solution: solution_10.png</h2>
+<img src="solution_10.png" width="374" height="400"><br>
+</div><button class="accordion">Solution: solution_11.png</button><div class="panel"><h2>Solution: solution_11.png</h2>
+<img src="solution_11.png" width="266" height="400"><br>
+</div><button class="accordion">Solution: solution_12.png</button><div class="panel"><h2>Solution: solution_12.png</h2>
+<img src="solution_12.png" width="600" height="326"><br>
+</div><button class="accordion">Solution: solution_13.png</button><div class="panel"><h2>Solution: solution_13.png</h2>
+<img src="solution_13.png" width="352" height="400"><br>
+</div><button class="accordion">Solution: solution_14.png</button><div class="panel"><h2>Solution: solution_14.png</h2>
+<img src="solution_14.png" width="220" height="399"><br>
+</div><button class="accordion">Solution: solution_15.png</button><div class="panel"><h2>Solution: solution_15.png</h2>
+<img src="solution_15.png" width="307" height="400"><br>
+</div><button class="accordion">Solution: solution_16.png</button><div class="panel"><h2>Solution: solution_16.png</h2>
+<img src="solution_16.png" width="373" height="400"><br>
+</div><button class="accordion">Solution: solution_2.png</button><div class="panel"><h2>Solution: solution_2.png</h2>
+<img src="solution_2.png" width="600" height="366"><br>
+</div><button class="accordion">Solution: solution_3.png</button><div class="panel"><h2>Solution: solution_3.png</h2>
+<img src="solution_3.png" width="273" height="400"><br>
+</div><button class="accordion">Solution: solution_4.png</button><div class="panel"><h2>Solution: solution_4.png</h2>
+<img src="solution_4.png" width="182" height="400"><br>
+</div><button class="accordion">Solution: solution_5.png</button><div class="panel"><h2>Solution: solution_5.png</h2>
+<img src="solution_5.png" width="491" height="400"><br>
+</div><button class="accordion">Solution: solution_6.png</button><div class="panel"><h2>Solution: solution_6.png</h2>
+<img src="solution_6.png" width="363" height="400"><br>
+</div><button class="accordion">Solution: solution_7.png</button><div class="panel"><h2>Solution: solution_7.png</h2>
+<img src="solution_7.png" width="526" height="400"><br>
+</div><button class="accordion">Solution: solution_8.png</button><div class="panel"><h2>Solution: solution_8.png</h2>
+<img src="solution_8.png" width="299" height="400"><br>
+</div><button class="accordion">Solution: solution_9.png</button><div class="panel"><h2>Solution: solution_9.png</h2>
+<img src="solution_9.png" width="368" height="400"><br>
+</div>
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+</script>
+</body>
+</html>

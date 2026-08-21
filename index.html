@@ -1,637 +1,292 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Rupali Tasnim Samad — Researcher & Engineer</title>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-<style>
-  :root {
-    --black: #0f0f0f;
-    --ink: #1a1a1a;
-    --mid: #555;
-    --soft: #888;
-    --rule: #e2e2e2;
-    --bg: #fafaf8;
-    --accent: #1a3a6e;
-    --accent-light: #e8edf5;
-    --red: #b5362a;
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    color: var(--ink);
-    font-size: 15px;
-    line-height: 1.65;
-  }
-
-  /* ── HEADER ── */
-  header {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 56px 32px 40px;
-    display: flex;
-    gap: 32px;
-    align-items: flex-start;
-    border-bottom: 2px solid var(--black);
-  }
-
-  .photo {
-    width: 92px;
-    height: 92px;
-    border-radius: 50%;
-    object-fit: cover;
-    flex-shrink: 0;
-    border: 2.5px solid var(--rule);
-    background: #d4d8e0;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 32px;
-    color: #888;
-    overflow: hidden;
-  }
-
-  .photo svg { width: 52px; height: 52px; opacity: .45; }
-
-  .intro h1 {
-    font-family: 'EB Garamond', serif;
-    font-size: 2.05rem;
-    font-weight: 500;
-    letter-spacing: -.01em;
-    line-height: 1.15;
-    color: var(--black);
-  }
-
-  .intro .tagline {
-    margin-top: 8px;
-    color: var(--mid);
-    font-size: .93rem;
-    line-height: 1.7;
-    max-width: 560px;
-  }
-
-  .intro .tagline strong { color: var(--ink); font-weight: 500; }
-
-  .nav-links {
-    margin-top: 14px;
-    display: flex;
-    gap: 18px;
-    flex-wrap: wrap;
-  }
-
-  .nav-links a {
-    font-size: .82rem;
-    text-transform: uppercase;
-    letter-spacing: .08em;
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 500;
-    border-bottom: 1.5px solid transparent;
-    transition: border-color .2s;
-  }
-  .nav-links a:hover { border-color: var(--accent); }
-
-  /* ── MAIN LAYOUT ── */
-  main {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 0 32px 80px;
-  }
-
-  /* ── SECTION ── */
-  section { margin-top: 48px; }
-
-  .section-label {
-    font-family: 'DM Sans', sans-serif;
-    font-size: .7rem;
-    text-transform: uppercase;
-    letter-spacing: .15em;
-    color: var(--soft);
-    font-weight: 500;
-    margin-bottom: 16px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  /* ── PUBLICATION CARD ── */
-  .pub-card {
-    padding: 20px 0;
-    border-bottom: 1px solid var(--rule);
-  }
-  .pub-card:last-child { border-bottom: none; }
-
-  .pub-title {
-    font-family: 'EB Garamond', serif;
-    font-size: 1.08rem;
-    font-weight: 600;
-    color: var(--black);
-    line-height: 1.35;
-  }
-
-  .pub-authors {
-    font-size: .83rem;
-    color: var(--soft);
-    margin-top: 4px;
-  }
-  .pub-authors strong { color: var(--ink); font-weight: 500; }
-
-  .pub-venue {
-    display: inline-block;
-    margin-top: 8px;
-    font-size: .78rem;
-    font-weight: 500;
-    padding: 3px 9px;
-    border-radius: 3px;
-    letter-spacing: .03em;
-  }
-
-  .badge-accepted { background: #e8f2e9; color: #2d6e34; }
-  .badge-review   { background: #fff4e3; color: #a06000; }
-  .badge-award    { background: #f0e8ff; color: #5a2d9a; }
-
-  .pub-desc {
-    font-size: .86rem;
-    color: var(--mid);
-    margin-top: 8px;
-    line-height: 1.6;
-  }
-
-  /* ── TABLE ── */
-  .data-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: .88rem;
-  }
-
-  .data-table thead tr {
-    border-bottom: 1.5px solid var(--black);
-  }
-
-  .data-table th {
-    text-align: left;
-    font-size: .72rem;
-    text-transform: uppercase;
-    letter-spacing: .1em;
-    color: var(--soft);
-    font-weight: 500;
-    padding: 0 12px 10px 0;
-  }
-
-  .data-table td {
-    padding: 11px 12px 11px 0;
-    vertical-align: top;
-    border-bottom: 1px solid var(--rule);
-    color: var(--ink);
-    line-height: 1.5;
-  }
-
-  .data-table tr:last-child td { border-bottom: none; }
-
-  .data-table td:first-child { font-weight: 500; }
-
-  .tag {
-    display: inline-block;
-    font-size: .73rem;
-    padding: 2px 8px;
-    border-radius: 3px;
-    margin: 2px 3px 2px 0;
-    font-weight: 400;
-  }
-
-  .tag-blue { background: var(--accent-light); color: var(--accent); }
-  .tag-gray { background: #f0f0ee; color: #555; }
-  .tag-green { background: #e8f4ec; color: #2e6b3a; }
-  .tag-red { background: #fdf0ee; color: #913020; }
-  .tag-yellow { background: #e9f7c8; color: #7e5c00; }
-
-  .year-col { color: var(--soft); font-size: .83rem; white-space: nowrap; }
-
-  /* ── COLLAB ── */
-  .collab-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-
-  @media(max-width:600px) { .collab-grid { grid-template-columns: 1fr; } }
-
-  .collab-card {
-    border: 1px solid var(--rule);
-    border-radius: 6px;
-    padding: 16px 18px;
-  }
-  .collab-card .inst {
-    font-family: 'EB Garamond', serif;
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--black);
-  }
-  .collab-card .advisor {
-    font-size: .82rem;
-    color: var(--accent);
-    margin-top: 2px;
-  }
-  .collab-card .topic {
-    font-size: .83rem;
-    color: var(--mid);
-    margin-top: 6px;
-    line-height: 1.5;
-  }
-
-  /* ── SMALL 3-COL SECTIONS ── */
-  .compact-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: .86rem;
-  }
-  .compact-table td {
-    padding: 9px 12px 9px 0;
-    vertical-align: top;
-    border-bottom: 1px solid var(--rule);
-    line-height: 1.5;
-  }
-  .compact-table tr:last-child td { border-bottom: none; }
-  .compact-table .label-col {
-    font-weight: 500;
-    width: 30%;
-    color: var(--ink);
-  }
-  .compact-table .meta-col {
-    color: var(--soft);
-    font-size: .8rem;
-    white-space: nowrap;
-    text-align: right;
-    padding-left: 8px;
-  }
-
-  .profile-img {
-    /* 1. Set equal width and height */
-    width: 170px;
-    height: 190px;
-
-    /* 2. Add border-radius to 50% for a perfect circle */
-    border: 3px solid #f0f0f0; /* Very light gray: Solid line, 3px thick */
-    padding: 3px;
-
-    /* 3. Add object-fit to ensure the image does not stretch */
-    object-fit: cover;
-}
-
-  footer {
-    border-top: 1px solid var(--rule);
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 24px 32px;
-    font-size: .8rem;
-    color: var(--soft);
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  @media(max-width:600px) {
-    header { flex-direction: column; gap: 20px; }
-    main { padding: 0 20px 60px; }
-  }
-</style>
-</head>
-<body>
-
-<!-- ── HEADER ── -->
-<header>
-  <img src="pic.JPG" class="profile-img" alt="Rupali Tasnim Samad">
-
-  <div class="intro">
-    <h1>Rupali Tasnim Samad</h1>
-    <p class="tagline">
-      Software Engineer at <strong>Samsung R&amp;D Institute Bangladesh.</strong> 
-      Graduated from <strong>University of Dhaka</strong> (BSSE, Feb 2025) with a CGPA of <strong>3.83/4.00.</strong><br>
-      
-      Research interests: <strong>Human–Computer Interaction, Responsible AI, Applied NLP</strong>.
-    </p>
-    <div class="nav-links">
-      <a href="#news">News</a>
-      <a href="#publications">Publications</a>
-      <a href="#patents">Patents</a>
-      <a href="#collaborations">Collaborations</a>
-      <a href="#awards">Awards</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-    </div>
-  </div>
-</header>
-
-<main>
-
-  <!-- ── RECENT NEWS ── -->
-  <section id="news">
-  <div class="section-label">Recent News & Awards</div>
-  
-  <table class="data-table">
-    <thead>
-      <tr>
-        <th style="width:110px">Date</th>
-        <th>Update</th>
-        <th style="width:90px">Tag</th>
-      </tr>
-    </thead>
-    <tbody id="timeline-body">
-      
-      <tr>
-          <td class="year-col">Apr 2025</td>
-          <td>Two DOIs filed at Samsung HQ: <em>Optimization of dLoRA Architecture</em> and <em>Automated Video Privacy Generation</em>.</td>
-          <td><span class="tag tag-blue">Patent</span></td>
-        </tr>
-        <tr>
-          <td class="year-col">2025 </td>
-          <td>Paper accepted as <strong>CHI 2026 Poster</strong>: <em>Bangladesh's AI Readiness: Perspectives from the Academia, Industry, and Government</em>.</td>
-          <td><span class="tag tag-green">Publication</span></td>
-        </tr>
-        <tr>
-          <td class="year-col">2025</td>
-          <td>Paper submitted to <strong>ACM COMPASS 2026</strong> on Bangladesh AI Readiness (curriculum, infrastructure, governance). Preprint on arXiv.</td>
-          <td><span class="tag tag-green">Publication</span></td>
-        </tr>
-        <tr>
-          <td class="year-col">Nov 2025</td>
-          <td>Received <strong>Excellence in Research Award</strong>, 2025 Q2, Samsung R&amp;D Institute Bangladesh.</td>
-          <td><span class="tag tag-red">Award</span></td>
-        </tr>
-        <tr>
-          <td class="year-col">Jul 2025</td>
-          <td>AI PoC on stress measurement wearables received <strong>highest votes (293 engineers)</strong> at Samsung R&amp;D Bangladesh internal AIPoC contest — "People's Champion".</td>
-          <td><span class="tag tag-red">Award</span></td>
-        </tr>
-        <tr>
-          <td class="year-col">May 2024</td>
-          <td><em>Dynamic Test Case Selection with LLM</em> accepted as Extended Abstract — <strong>Samsung Best Paper Award</strong>.</td>
-          <td><span class="tag tag-green">Publication</span></td>
-        </tr>
-
-      <tr class="hidden-award-row">
-        <td class="year-col">2025</td>
-        <td><strong>Govt. Scholarship</strong> awarded for undergraduate academic excellence, University of Dhaka.</td>
-        <td><span class="tag tag-red">Award</span></td>
-      </tr>
-      <tr class="hidden-award-row">
-        <td class="meta-col">2024</td>
-          <td class="label-col">Samsung Best Paper Award</td>
-          <td><span class="tag tag-red">Award</span></td>
-          
-        </tr>
-        <tr class="hidden-award-row">
-          <td class="meta-col">2023</td>
-          <td class="label-col">UXplorer Quest - UI/UX Design Contest, Cefalo ITverse 2023</td>
-          <td><span class="tag tag-blue">Champion</span></td>
-          
-        </tr>
-        <tr class="hidden-award-row">
-          <td class="meta-col">2023</td>
-          <td class="label-col">HackTheVerse - Hackathon Blockchain Challenge, Cefalo ITverse 2023</td>
-          <td><span class="tag tag-blue">Champion</span></td>
-          
-        </tr>
-        <tr class="hidden-award-row">
-          <td class="meta-col">2023</td>
-          <td class="label-col"> TechTales - Software Project Showcasing, Cefalo ITverse 2023</td>
-          <td><span class="tag tag-blue">1st Runner-Up</span></td>
-          
-        </tr>
-        <tr class="hidden-award-row">
-          <td class="meta-col">2023</td>
-          <td class="label-col">Inter-University Ideathon, NDUB CSE Fest 2023 </td>
-          <td><span class="tag tag-blue">2nd Runner-Up</span></td>
-          
-        </tr>
-        <tr class="hidden-award-row">
-          <td class="meta-col">2023</td>
-          <td class="label-col">Inter-University Project Showcasing &amp; IEEE BUP Branch Fest </td>
-          <td><span class="tag tag-blue">2nd Runner-Up</span></td>
-          
-        </tr>
-        <tr class="hidden-award-row">
-          <td class="meta-col">2017–19</td>
-          <td class="label-col">Govt. Scholarship - Higher Secondary Certification Examination<</td>
-          <td><span class="tag tag-yellow">Scholarship</span></td>
-          
-        </tr>
-      </tbody>
-  </table>
-
-  <div style="text-align: center; margin-top: 15px;">
-    <button id="toggle-btn" onclick="toggleAwards()">Show More</button>
-  </div>
-</section>
-
-<style>
-  /* This hides the rows initially */
-  .hidden-award-row {
-    display: none;
-  }
-  
-  #toggle-btn {
-  background-color: #ffffff;
-  color: #374151; /* Darker gray, easier to read than black */
-  border: 1px solid #e5e7eb; /* Soft border */
-  border-radius: 8px; /* Slightly rounded for a modern look */
-  padding: 10px 24px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.25s ease; /* Makes the interaction feel smooth */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-#toggle-btn:hover {
-  background-color: #f9fafb;
-  border-color: #d1d5db;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* Adds depth on hover */
-  transform: translateY(-1px); /* Creates a subtle "lift" effect */
-}
-</style>
-
-<script>
-  function toggleAwards() {
-    const rows = document.querySelectorAll('.hidden-award-row');
-    const btn = document.getElementById('toggle-btn');
-    
-    rows.forEach(row => {
-      // Toggle display between 'none' and 'table-row'
-      row.style.display = (row.style.display === 'table-row') ? 'none' : 'table-row';
-    });
-
-    // Change button text
-    btn.innerText = (rows[0].style.display === 'table-row') ? 'Show Less' : 'Show More';
-  }
-</script>
-
-  <!-- ── PUBLICATIONS ── -->
-  <section id="publications">
-    <div class="section-label">Publications</div>
-
-    <div class="pub-card">
-      <div class="pub-title">Bangladesh's AI Readiness: Perspectives from the Academia, Industry, and Government</div>
-      <div class="pub-authors">Sharifa Sultana, <strong>Rupali Tasnim Samad</strong>, Mehzabin Haque, Zinnat Sultana, Zulkarin Jahangir, B M Mainul Hossain, Rashed Mujib Noman, Syed Ishtiaque Ahmed</div>
-      <span class="pub-venue badge-accepted">CHI 2026 Poster · Accepted (A*)</span>
-      <div class="pub-desc">Investigates AI readiness across academia, industry, and government in Bangladesh — examining gaps in infrastructure, governance, and deployment readiness.</div>
-    </div>
-
-    <div class="pub-card">
-      <div class="pub-title">Bangladesh AI Readiness: Gaps in Curriculum, Infrastructure, and Governance</div>
-      <div class="pub-authors">Sharifa Sultana, <strong>Rupali Tasnim Samad</strong>, Mehzabin Haque, Zinnat Sultana, Zulkarin Jahangir, B M Mainul Hossain, Rashed Mujib Noman, Syed Ishtiaque Ahmed</div>
-      <span class="pub-venue badge-review">COMPASS 2026 · Under Review</span>&nbsp;
-      <span class="pub-venue badge-review">arXiv Preprint Available</span>
-      <div class="pub-desc">Analyses structural deficiencies in Bangladesh's AI ecosystem across education, technical infrastructure, and policy frameworks.</div>
-    </div>
-
-    <div class="pub-card">
-      <div class="pub-title">Dynamic Test Case Selection (TCS) with LLM</div>
-      <div class="pub-authors">A. Paul, <strong>R. Tasnim</strong></div>
-      <span class="pub-venue badge-award">Samsung Best Paper Award · Extended Abstract · May 2024</span>
-      <div class="pub-desc">Survey at Samsung R&amp;D Bangladesh revealed dynamic TCS needs across projects unaddressable by existing tools. Proposed Knowledge Graph structures and custom embeddings on project vocabularies for LLM-based TCS.</div>
-    </div>
-  </section>
-
-  <!-- ── PATENTS & DOIs ── -->
-  <section id="patents">
-    <div class="section-label">Patents &amp; Disclosures</div>
-    <table class="data-table">
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Status</th>
-          <th style="width:105px">Date</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div style="font-weight:500">Optimization of dLoRA Architecture</div>
-          
-          </td>
-          <td><span class="tag tag-blue">DOI Filed · In Review</span><br/><span style="font-size:.78rem;color:var(--soft)">Passed all SRBD steps → Samsung HQ</span></td>
-          <td class="year-col">Apr 2025</td>
-        </tr>
-        <tr>
-          <td>
-            <div style="font-weight:500">Automated Video Privacy Generation</div>
-            
-          </td>
-          <td><span class="tag tag-blue">DOI Filed · In Review</span><br/><span style="font-size:.78rem;color:var(--soft)">Passed all SRBD steps → Samsung HQ</span></td>
-          <td class="year-col">Apr 2025</td>
-        </tr>
-        <tr>
-          <td>
-            <div style="font-weight:500">Method to Reduce False Positives in Stress Measurement via Wearable</div>
-            
-          </td>
-          <td><span class="tag tag-gray">DOI Filed · In Review</span><br/><span style="font-size:.78rem;color:var(--soft)">Ongoing — Samsung R&amp;D Bangladesh</span></td>
-          <td class="year-col">Apr 2026</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <!-- ── COLLABORATIONS ── -->
-  <section id="collaborations">
-    <div class="section-label">Research Collaborations</div>
-    <div class="collab-grid">
-      <div class="collab-card">
-        <div class="inst">University of Toronto &amp; University of Illinois Urbana-Champaign</div>
-        <div class="advisor">Dr. Syed Ishtiaque Ahmed · Dr. Sharifa Sultana Ela</div>
-        <div class="topic">Responsible AI, AI Readiness — Two papers submitted; one accepted at CHI 2026, one under review at ACM COMPASS.</div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Rupali Tasnim Samad — Software Engineer and AI researcher."
+    />
+    <title>Rupali Tasnim Samad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Libre+Baskerville:wght@400;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=4" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="Primary navigation">
+        <a class="site-name" href="index.html">Rupali Tasnim Samad</a>
+        <div class="nav-links">
+          <a class="active" href="index.html">Home</a
+          ><a href="research.html">Research</a
+          ><a href="projects.html">Projects</a
+          ><a href="achievements.html">Achievements</a
+          ><a href="assests/Cv (4).pdf" target="_blank" rel="noopener"
+            >CV</a
+          >
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="home-hero">
+        <div class="content hero-grid">
+          <img
+            class="profile-photo"
+            src="pic.JPG"
+            alt="Portrait of Rupali Tasnim Samad"
+          />
+          <div>
+            <p class="kicker">Software Engineer · AI &amp; HCI Researcher</p>
+            <h1>Rupali Tasnim Samad</h1>
+            <p class="affiliation">
+              Samsung R&amp;D Institute Bangladesh · University of Dhaka
+            </p>
+            <div class="intro">
+              <p>
+                I am a Software Engineer at
+                <strong>Samsung R&amp;D Institute Bangladesh</strong> and a
+                researcher working at the intersection of artificial
+                intelligence and human–computer interaction. I earned my B.Sc.
+                in Software Engineering from the
+                <strong
+                  >Institute of Information Technology, University of
+                  Dhaka</strong
+                >, with a CGPA of <strong>3.83/4.00</strong>.
+              </p>
+              <p>
+                My research explores responsible AI, privacy, human–computer
+                interaction, and on-device intelligence, with particular
+                attention to how technical systems interact with social
+                realities in Global South contexts. Over the past two years, I
+                have worked with
+                <strong>Dr. Syed Ishtiaque Ahmed</strong> across three research
+                projects. My collaboration with
+                <strong>Dr. Sharifa Sultana</strong> has resulted in two
+                accepted publications, and we are currently developing a new
+                study. I am also collaborating with
+                <strong>Dr. Tanusree Sharma</strong> at Pennsylvania State
+                University on an ongoing research project.
+              </p>
+              <p class="interests">
+                <strong>Research interests:</strong> Responsible AI ·
+                Human–Computer Interaction · AI Privacy · AI for the Global
+                South · On-device AI
+              </p>
+            </div>
+            <ul
+              class="contact-list"
+              aria-label="Contact and professional profiles"
+            >
+              <li><a href="mailto:rupalitasnimsamad@gmail.com">Email</a></li>
+              <li>
+                <a
+                  href="https://scholar.google.com/citations?user=pF2UNGYAAAAJ&amp;hl=en"
+                  target="_blank"
+                  rel="noopener"
+                  >Google Scholar</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/rupali-tasnim-samad-495a642a6/"
+                  target="_blank"
+                  rel="noopener"
+                  >LinkedIn</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/Labonnya"
+                  target="_blank"
+                  rel="noopener"
+                  >GitHub</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Rupali_Tasnim_Samad_CV.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  >Curriculum Vitae</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="section-band">
+        <div class="content"><h2>Recent Highligts</h2></div>
+      </section>
+      <section class="page-section">
+        <div class="content">
+          <div class="table-scroll">
+            <table class="data-table">
+              <tbody id="timeline-body">
+                <tr>
+                  <td class="year-col">July. 2026</td>
+                  <td>
+                    Another invention disclosures were <strong>filed</strong> at Samsung
+                    Headquarters.
+                  </td>
+                  
+                </tr>
+                <tr>
+                  <td class="year-col">May. 2026</td>
+                  <td>
+                    Our paper
+                    <em
+                      >Bangladesh AI Readiness: Gaps in Curriculum,
+                      Infrastructure, and Governance</em
+                    >
+                    was accepted at <strong>ACM COMPASS 2026</strong>.
+                  </td>
+                  
+                </tr>
+                
+                <tr>
+                  <td class="year-col">May. 2026</td>
+                  <td>
+                    One invention disclosures received <strong>highest grade</strong> from Samsung Headquarters.
+                  </td>
+                  
+                </tr>
+                
+                    
+                  <td class="year-col">Mar 2026</td>
+                  <td>
+                    Our paper
+                    <em
+                      >Bangladesh's AI Readiness: Perspectives from the
+                      Academia, Industry, and Government</em
+                    >
+                    was accepted as a <strong>CHI 2026 Poster</strong>.
+                  </td>
+                  
+                </tr>
+                <tr>
+                  <td class="year-col">Nov. 2025</td>
+                  <td>
+                    Received the <strong>Excellence in Research Award</strong>,
+                    2025 Q2, at Samsung R&amp;D Institute Bangladesh.
+                  </td>
+                  
+                </tr>
+                <tr>
+                  <td class="year-col">Jul. 2025</td>
+                  <td>
+                    My AI proof of concept on stress-measurement wearables
+                    received the
+                    <strong>highest votes from 293 engineers</strong> in Samsung
+                    R&amp;D Bangladesh's internal AI PoC contest and was named
+                    <strong>People's Champion</strong>.
+                  </td>
+                  
+                </tr>
+                
+                <tr class="extra-news-row" hidden>
+                  <td class="year-col">2025</td>
+                  <td>
+                    Received a <strong>Government Scholarship</strong> for
+                    undergraduate academic excellence at the University of
+                    Dhaka.
+                  </td>
+                  
+                </tr>
+                <tr class="extra-news-row" hidden>
+                  <td class="year-col"> 2024</td>
+                  <td>
+                    <em>Dynamic Test Case Selection with LLM</em> was accepted
+                    as an extended abstract and received the
+                    <strong>Samsung Best Paper Award</strong>.
+                  </td>
+                  
+                </tr>
+                <tr class="extra-news-row" hidden>
+                  <td class="year-col">2023</td>
+                  <td>
+                    Won <strong>Champion</strong> in UXplorer Quest, the UI/UX
+                    Design Contest at Cefalo ITverse 2023.
+                  </td>
+                  
+                </tr>
+                <tr class="extra-news-row" hidden>
+                  <td class="year-col">2023</td>
+                  <td>
+                    Won <strong>Champion</strong> in HackTheVerse, the Hackathon
+                    Blockchain Challenge at Cefalo ITverse 2023.
+                  </td>
+                 
+                </tr>
+                <tr class="extra-news-row" hidden>
+                  <td class="year-col">2023</td>
+                  <td>
+                    Secured <strong>1st Runner-Up</strong> in TechTales, the
+                    Software Project Showcasing competition at Cefalo ITverse
+                    2023.
+                  </td>
+                  
+                </tr>
+                <tr class="extra-news-row" hidden>
+                  <td class="year-col">2023</td>
+                  <td>
+                    Secured <strong>2nd Runner-Up</strong> in the
+                    Inter-University Ideathon at NDUB CSE Fest 2023.
+                  </td>
+                  
+                </tr>
+                <tr class="extra-news-row" hidden>
+                  <td class="year-col">2023</td>
+                  <td>
+                    Secured <strong>2nd Runner-Up</strong> in the
+                    Inter-University Project Showcasing competition at IEEE BUP
+                    Branch Fest.
+                  </td>
+                  
+                </tr>
+                <tr class="extra-news-row" hidden>
+                  <td class="year-col">2019</td>
+                  <td>
+                    Received a <strong>Government Scholarship</strong> based on
+                    Higher Secondary Certificate examination results.
+                  </td>
+                  
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <button
+            class="show-more-button"
+            id="news-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="timeline-body"
+          >
+            Show more
+          </button>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="content footer-inner">
+        <span>© 2026 Rupali Tasnim Samad</span
+        ><a href="mailto:rupalitasnimsamad@gmail.com"
+          >rupalitasnimsamad@gmail.com</a
+        >
       </div>
-      <div class="collab-card">
-        <div class="inst">University of Toronto &amp; Pennsylvania State University</div>
-        <div class="advisor">Dr. Syed Ishtiaque Ahmed · Dr. Tanusree Sharma</div>
-        <div class="topic">Privacy in AI, HCI — Investigating privacy risks in shared LLMs, with focus on Global South contexts.</div>
-      </div>
-      <div class="collab-card">
-        <div class="inst">University of Toronto</div>
-        <div class="advisor">Zarif Masud (PhD) · Dr. Ebrahim Bagheri</div>
-        <div class="topic">Examining biases in large language models related to immigration narratives.</div>
-      </div>
-      <div class="collab-card">
-        <div class="inst">Monash University — HumaniSE Lab</div>
-        <div class="advisor">Software Engineering &amp; Accessibility · Dec 2022 – Mar 2023</div>
-        <div class="topic">Designed software requirements &amp; system architecture for an Android app localization tool respecting human values of universalism. Submitted to IEEE ICSE.</div>
-      </div>
-    </div>
-  </section>
-
- 
-  <!-- ── SKILLS ── -->
-  <section id="skills">
-    <div class="section-label">Technical Skills</div>
-    <table class="compact-table">
-      <tbody>
-        <tr>
-          <td class="label-col">Languages</td>
-          <td>
-            <span class="tag tag-blue">Python</span><span class="tag tag-blue">JavaScript / TypeScript</span><span class="tag tag-blue">Java</span><span class="tag tag-blue">C / C++</span><span class="tag tag-blue">Rust</span><span class="tag tag-blue">SQL</span><span class="tag tag-gray">Solidity</span><span class="tag tag-gray">R</span><span class="tag tag-gray">Bash</span><span class="tag tag-gray">PHP</span><span class="tag tag-gray">E-Lisp</span><span class="tag tag-gray">TLA+</span><span class="tag tag-gray">Alloy</span><span class="tag tag-gray">Coq</span><span class="tag tag-gray">Maude</span><span class="tag tag-gray">LTSA</span>
-          </td>
-          <td class="meta-col"></td>
-        </tr>
-        <tr>
-          <td class="label-col">Libraries &amp; Frameworks</td>
-          <td>
-            <span class="tag tag-blue">PyTorch</span><span class="tag tag-blue">Scikit-Learn</span><span class="tag tag-blue">OpenCV</span><span class="tag tag-blue">llama.cpp</span><span class="tag tag-blue">MEAN Stack</span><span class="tag tag-gray">Hardhat</span><span class="tag tag-gray">Actix (Rust)</span><span class="tag tag-gray">BNLTK</span><span class="tag tag-gray">MCP</span><span class="tag tag-gray">ast</span>
-          </td>
-          <td class="meta-col"></td>
-        </tr>
-        <tr>
-          <td class="label-col">Dev Tools</td>
-          <td>
-            <span class="tag tag-blue">Git</span><span class="tag tag-blue">Azure Cloud</span><span class="tag tag-blue">Linux / UNIX</span><span class="tag tag-blue">Docker Swarm</span><span class="tag tag-gray">Emacs</span><span class="tag tag-gray">Knowledge Graph</span><span class="tag tag-gray">Remote Server Mgmt</span>
-          </td>
-          <td class="meta-col"></td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <!-- ── PROJECTS ── -->
-  <section id="projects">
-    <div class="section-label">Selected Projects</div>
-    <table class="compact-table">
-      <tbody>
-        <tr>
-          <td class="label-col">AI Maturity Assessment Tool</td>
-          <td>LLM-based evaluation tool for AI maturity of software companies.<br/><span class="tag tag-gray">FastAPI</span><span class="tag tag-gray">Next.js</span><span class="tag tag-gray">MongoDB</span></td>
-          <td class="meta-col"></td>
-        </tr>
-        <tr>
-          <td class="label-col">BSL — Bangla Sign Language Platform</td>
-          <td>Interactive learning website with activity recognition for Bangla sign language.<br/><span class="tag tag-gray">FastAPI</span><span class="tag tag-gray">Angular</span><span class="tag tag-gray">SQLite</span></td>
-          <td class="meta-col"></td>
-        </tr>
-        <tr>
-          <td class="label-col">Earth &amp; Beyond Earth</td>
-          <td>Immersive educational website exploring countries and the solar system.<br/><span class="tag tag-gray">FastAPI</span><span class="tag tag-gray">React</span><span class="tag tag-gray">SQLite</span></td>
-          <td class="meta-col"></td>
-        </tr>
-        <tr>
-          <td class="label-col">DU Bus Tracking System</td>
-          <td>Real-time bus location display for University of Dhaka campus buses.<br/><span class="tag tag-gray">Flutter</span></td>
-          <td class="meta-col"></td>
-        </tr>
-        <tr>
-          <td class="label-col">AirBnB Recommendation System</td>
-          <td>Machine-learning based property recommendation engine.</td>
-          <td class="meta-col"></td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-</main>
-
-<footer>
-  <span>Rupali Tasnim Samad &mdash; Dhaka, Bangladesh</span>
-  <span>Updated April 2026</span>
-</footer>
-
-</body>
+    </footer>
+    <script>
+      const newsToggle = document.getElementById("news-toggle");
+      const extraNewsRows = document.querySelectorAll(".extra-news-row");
+      newsToggle.addEventListener("click", () => {
+        const expanded = newsToggle.getAttribute("aria-expanded") === "true";
+        extraNewsRows.forEach((row) => (row.hidden = expanded));
+        newsToggle.setAttribute("aria-expanded", String(!expanded));
+        newsToggle.textContent = expanded ? "Show more" : "Show less";
+      });
+    </script>
+  </body>
 </html>

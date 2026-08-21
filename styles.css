@@ -898,3 +898,17 @@ footer {
     object-fit: contain;
   }
 }
+
+.professor-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #888;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.professor-link:hover,
+.professor-link:focus-visible {
+  color: var(--nav);
+  text-decoration-color: var(--nav);
+}

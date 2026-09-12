@@ -1198,3 +1198,16 @@ footer {
     padding-top: 35px;
   }
 }
+.review-status {
+  display: inline-block;
+  margin: 0.35rem 0 0.9rem;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid #b7791f;
+  border-radius: 1px;
+  background: #fff8e6;
+  color: #8a5700;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
